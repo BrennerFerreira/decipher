@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="formulario">
+        <input type="text" id="mensagem" />
+        <div id="botoes">
+          <div id="cifra">
+            <select name="cifraSelection" id="cifraSelection">
+              <option value="cesar">Cifra de César</option>
+              <option value="base64">Base 64</option>
+            </select>
+
+            <div id="inputChaveCesar">
+              <label for="chaveCesar"> Chave: </label>
+              <input type="number" min="0" id="chaveCesar" />
+            </div>
+          </div>
+
+          <div id="radio">
+            <input
+              type="radio"
+              id="codificar"
+              name="responseType"
+              value="codificar"
+              checked
+            />
+            <label for="codificar">Codificar</label>
+
+            <input
+              type="radio"
+              id="decodificar"
+              name="responseType"
+              value="decodificar"
+            />
+            <label for="decodificar">Decodificar</label>
+          </div>
+
+          <button type="submit" id="botaoSubmit">Codificar mensagem</button>
+        </div>
+      </form>
+      <div id="resposta"></div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
