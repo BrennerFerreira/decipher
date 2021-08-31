@@ -27,10 +27,10 @@ decodificar.addEventListener("click", function () {
 
 function cifraDeCesar(texto, chave) {
   if (chave < 0) {
-    return caesarShift(texto, chave + 26);
+    return cifraDeCesar(texto, chave + 26);
   }
 
-  var output = "";
+  var retorno = "";
 
   for (var i = 0; i < texto.length; i++) {
     var caracter = texto[i];
@@ -38,17 +38,17 @@ function cifraDeCesar(texto, chave) {
     var codigo = texto.charCodeAt(i);
 
     if (codigo >= 65 && codigo <= 90) {
-      var casasParaMudar = ((codigo + chave - 65) % 26) + 65;
-      caracter = String.fromCharCode(casasParaMudar);
+      var codigoAlterado = ((codigo + chave - 65) % 26) + 65;
+      caracter = String.fromCharCode(codigoAlterado);
     } else if (codigo >= 97 && codigo <= 122) {
-      var casasParaMudar = ((codigo + chave - 97) % 26) + 97;
-      caracter = String.fromCharCode(casasParaMudar);
+      var codigoAlterado = ((codigo + chave - 97) % 26) + 97;
+      caracter = String.fromCharCode(codigoAlterado);
     }
 
-    output += caracter;
+    retorno += caracter;
   }
 
-  return output;
+  return retorno;
 }
 
 function submit(event) {
