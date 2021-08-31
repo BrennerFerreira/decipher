@@ -6,6 +6,7 @@ var chaveCesar = document.querySelector("#chaveCesar");
 var codificar = document.querySelector("#codificar");
 var decodificar = document.querySelector("#decodificar");
 var botaoSubmit = document.querySelector("#botaoSubmit");
+var paragrafoResposta = document.querySelector("#textoResposta");
 
 cifra.addEventListener("change", function (event) {
   var valorSelecionado = event.target.value;
@@ -51,10 +52,10 @@ function cifraDeCesar(texto, chave) {
   return retorno;
 }
 
-function base64(texto, isDecode) {
+function base64(texto, decodificarEstaSelecionado) {
   var retorno;
 
-  if (isDecode) {
+  if (decodificarEstaSelecionado) {
     retorno = atob(texto);
   } else {
     retorno = btoa(texto);
@@ -80,14 +81,7 @@ function submit(event) {
     textoCifrado = base64(mensagem.value, decodificar.checked);
   }
 
-  var paragrafoResposta = document.querySelector("#textoResposta");
   paragrafoResposta.textContent = textoCifrado;
-
-  console.log(`mensagem: ${mensagem.value}`);
-  console.log(`cifra: ${cifra.value}`);
-  console.log(`chave cesar: ${chaveCesar.value}`);
-  console.log(`codificar: ${codificar.checked}`);
-  console.log(`decodificar: ${decodificar.checked}`);
 }
 
 form.addEventListener("submit", submit);
