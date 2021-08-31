@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  padding: 15px;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(169, 169, 169, 0.295);
+}
+
+#formulario {
+  height: 90%;
+  width: 90%;
+  display: flex;
+}
+
+#inputMensagem {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+textarea,
+#paragrafoResposta {
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px -5px rgba(169, 169, 169, 0.534);
+  border: none;
+  padding: 15px;
+  background-color: white;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  outline: none;
+}
+
+#areaCentral {
+  padding: 10px;
+  flex: 1;
+  height: 90%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#titulo,
+#botoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo {
+  flex: 1;
+  font-family: "Architects Daughter", cursive;
+  font-size: 50px;
+}
+
+#botoes {
+  flex: 3;
+}
+
+#botoes > * {
+  margin: 15px 0;
+}
+
+#cifraSelection {
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+#cifraSelection:hover {
+  cursor: pointer;
+}
+
+#chaveCesar {
+  width: 50px;
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+#radio {
+  display: flex;
+  flex-direction: column;
+}
+
+#botaoSubmit {
+  min-width: 165px;
+  height: 50px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px -5px rgba(169, 169, 169, 0.685);
+  transition: box-shadow ease-in-out 0.5s;
+}
+
+#botaoSubmit:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(169, 169, 169, 0.685);
+}
+
+#resposta {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

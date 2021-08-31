@@ -8,48 +8,62 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <form id="formulario">
-        <input type="text" id="mensagem" />
+    <form id="formulario">
+      <div id="inputMensagem">
+        <textarea
+          id="mensagem"
+          placeholder="Escreva o texto que deseja codificar ou decodificar..."
+        ></textarea>
+      </div>
+      <div id="areaCentral">
+        <div id="titulo">Decifrador</div>
         <div id="botoes">
           <div id="cifra">
+            <label for="cifraSelection">Tipo de cifra:</label>
             <select name="cifraSelection" id="cifraSelection">
               <option value="cesar">Cifra de César</option>
               <option value="base64">Base 64</option>
             </select>
+          </div>
 
-            <div id="inputChaveCesar">
-              <label for="chaveCesar"> Chave: </label>
-              <input type="number" min="0" id="chaveCesar" />
-            </div>
+          <div id="inputChaveCesar">
+            <label for="chaveCesar"> Chave: </label>
+            <input type="number" min="0" id="chaveCesar" />
           </div>
 
           <div id="radio">
-            <input
-              type="radio"
-              id="codificar"
-              name="responseType"
-              value="codificar"
-              checked
-            />
-            <label for="codificar">Codificar</label>
+            <div id="areaCodificar">
+              <input
+                type="radio"
+                id="codificar"
+                name="responseType"
+                value="codificar"
+                checked
+              />
+              <label for="codificar">Codificar</label>
+            </div>
 
-            <input
-              type="radio"
-              id="decodificar"
-              name="responseType"
-              value="decodificar"
-            />
-            <label for="decodificar">Decodificar</label>
+            <div id="areaDecoficar">
+              <input
+                type="radio"
+                id="decodificar"
+                name="responseType"
+                value="decodificar"
+              />
+              <label for="decodificar">Decodificar</label>
+            </div>
           </div>
 
           <button type="submit" id="botaoSubmit">Codificar mensagem</button>
         </div>
-      </form>
-      <div id="resposta">
-        <p id="textoResposta"></p>
       </div>
-    </div>
+
+      <div id="resposta">
+        <div id="paragrafoResposta">
+          <p id="textoResposta">A conversão do texto aparecerá aqui.</p>
+        </div>
+      </div>
+    </form>
 
     <script src="./index.js"></script>
   </body>
