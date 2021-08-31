@@ -51,24 +51,38 @@ function cifraDeCesar(texto, chave) {
   return retorno;
 }
 
+function base64(texto, isDecode) {
+  var retorno;
+
+  if (isDecode) {
+    retorno = atob(texto);
+  } else {
+    retorno = btoa(texto);
+  }
+
+  return retorno;
+}
+
 function submit(event) {
   event.preventDefault();
 
+  var textoCifrado;
+
   if (cifra.value == "cesar") {
     var chave = +chaveCesar.value || 0;
-    var textoCifrado;
 
     if (codificar.checked) {
       textoCifrado = cifraDeCesar(mensagem.value, chave);
     } else {
       textoCifrado = cifraDeCesar(mensagem.value, -chave);
     }
-
-    var novoParagrafo = document.createElement("p");
-    var divResposta = document.querySelector("#resposta");
-    novoParagrafo.textContent = textoCifrado;
-    divResposta.append(novoParagrafo);
+  } else {
+    textoCifrado = base64(mensagem.value, decodificar.checked);
   }
+
+  var paragrafoResposta = document.querySelector("#textoResposta");
+  paragrafoResposta.textContent = textoCifrado;
+
   console.log(`mensagem: ${mensagem.value}`);
   console.log(`cifra: ${cifra.value}`);
   console.log(`chave cesar: ${chaveCesar.value}`);
